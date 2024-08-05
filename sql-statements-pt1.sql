@@ -223,7 +223,7 @@ ORDER BY ln ASC;
 
 -- I enjoyed creating the last SQL statement to generate a result set 
 -- that relates to a real-world scenario of project code labels ('prcode')
--- for project filing purposes."
+-- for project filing purposes. I even saved this SQL statement as a snippet in MySql Workbench.
 SELECT 
     label, REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(
         UPPER(SUBSTRING_INDEX(label, ' ', 1)), 'A', ''), 'E', ''), 'I', ''), 'O', ''), 'U', '') AS prcode, ROUND(budget) budget
