@@ -163,7 +163,70 @@ SELECT
 FROM
 	person;
     
-SELECT
-	lastname, firstname, ROUND(DATEDIFF(NOW(),dob)/365)
+SELECT 
+    lastname, firstname, ROUND(DATEDIFF(NOW(), dob) / 365)
 FROM
-	person;
+    person;
+    
+SELECT 
+    lastname, firstname, dob
+FROM
+    person
+ORDER BY lastname ASC;
+
+SELECT 
+    lastname, firstname, dob
+FROM
+    person
+ORDER BY dob DESC;
+
+SELECT 
+    lastname, firstname, dob
+FROM
+    person
+ORDER BY firstname ASC , dob DESC;
+
+SELECT 
+    lastname, firstname, dob, managerid
+FROM
+    person
+ORDER BY managerid ASC , dob DESC;
+
+SELECT 
+    lastname 'Last Name', firstname as first_name, dob Birthday
+FROM
+    person
+ORDER BY managerid ASC , dob DESC;
+
+SELECT LEFT('John', 2);
+    
+SELECT ROUND(DATEDIFF(NOW(), '1986-09-28') / 365) AS 'Nate Durbala\'s age';
+
+SELECT CONCAT('Nate', ' m', ' Durbala') AS 'concatenated name';
+
+SELECT SUBSTR('Nathanial', 1, 3) AS 'substring';
+
+SELECT ROUND(38.14567) AS 'rounding';
+
+SELECT 
+    LEFT(firstname, 1) initial, lastname, dob
+FROM
+    person
+ORDER BY initial DESC;
+
+SELECT 
+    RIGHT(firstname, 1) 'Last Letter', lastname ln
+FROM
+    person
+ORDER BY ln ASC;
+
+
+-- I enjoyed creating the last SQL statement to generate a result set 
+-- that relates to a real-world scenario of project code labels ('prcode')
+-- for project filing purposes."
+SELECT 
+    label, REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(
+        UPPER(SUBSTRING_INDEX(label, ' ', 1)), 'A', ''), 'E', ''), 'I', ''), 'O', ''), 'U', '') AS prcode, ROUND(budget) budget
+FROM
+    project
+ORDER BY budget ASC;
