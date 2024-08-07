@@ -229,7 +229,7 @@ ORDER BY pr.label desc;
 
 -- query from book I'm following along
 -- same number of lines of code
--- returned same 6 rows and result as the next query
+-- returned same 6 rows and result as the previous query
 -- query duration took '0.00068' seconds
 -- which one is more efficient and why?
 SELECT 
